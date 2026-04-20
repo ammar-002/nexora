@@ -54,7 +54,7 @@ export function Footer() {
                   <span className="text-sm font-bold text-primary">N</span>
                 </div>
               </div>
-              <span className="text-xl font-bold">Nexora</span>
+              <span className="text-xl font-bold">Nexore</span>
             </motion.a>
             <p className="text-muted-foreground text-sm mb-6 max-w-xs text-pretty">
               Empowering businesses with AI automation and modern web solutions
@@ -145,7 +145,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="mt-16 pt-8 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Nexora. All rights reserved.
+            &copy; {new Date().getFullYear()} Nexore. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground">
             Crafted with precision for the future of business.

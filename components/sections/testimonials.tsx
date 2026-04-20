@@ -9,7 +9,7 @@ const testimonials = [
     name: "Sarah Chen",
     role: "CEO, TechFlow",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
-    content: "Nexora transformed our customer support with their AI chatbot. Response times dropped by 80% and customer satisfaction is at an all-time high.",
+    content: "Nexore transformed our customer support with their AI chatbot. Response times dropped by 80% and customer satisfaction is at an all-time high.",
     rating: 5,
   },
   {

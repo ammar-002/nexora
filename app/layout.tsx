@@ -15,11 +15,11 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Nexora | AI Automation & Web Development Agency',
+  title: 'Nexore | AI Automation & Web Development Agency',
   description: 'Transform your business with intelligent AI automation systems and stunning modern web experiences. We build chatbots, workflow automation, and premium websites.',
   keywords: ['AI automation', 'web development', 'chatbots', 'workflow automation', 'digital agency'],
   openGraph: {
-    title: 'Nexora | AI Automation & Web Development Agency',
+    title: 'Nexore | AI Automation & Web Development Agency',
     description: 'Transform your business with intelligent AI automation and modern web solutions.',
     type: 'website',
   },
