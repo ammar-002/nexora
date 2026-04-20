@@ -55,7 +55,7 @@ export function Navbar() {
                   <span className="text-sm font-bold text-primary">N</span>
                 </div>
               </div>
-              <span className="text-xl font-bold">Nexora</span>
+              <span className="text-xl font-bold">Nexore</span>
             </motion.a>
 
             {/* Desktop Navigation */}
