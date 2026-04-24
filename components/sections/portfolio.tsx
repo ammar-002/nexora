@@ -5,6 +5,7 @@ import { ExternalLink, Github, ZoomIn, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { url } from "inspector";
 
 const projects = [
   {
@@ -12,24 +13,28 @@ const projects = [
     description:
       "Modern e-commerce platform for footwear with smart recommendations and seamless checkout flow.",
     image: "/jogkar.png",
+    url: "https://e-commerce-store-clientside.vercel.app/",
   },
   {
     title: "Fabrico T-shirt Store",
     description:
       "Clean and scalable apparel store focused on sustainability, user experience, and smooth shopping journey.",
     image: "/fabrico.png",
+    url: "https://fabrico-mens-wear.vercel.app/",
   },
   {
     title: "CEMS-Warehouse Management System",
     description:
       "Role-based warehouse system where admins oversee operations, bookers create orders, and suppliers manage fulfillment.",
     image: "/cemsfull.png",
+    url: "https://cems-rose.vercel.app/",
   },
   {
     title: "Job Portal",
     description:
       "Feature-rich job platform with advanced search, streamlined applications, and efficient tracking system.",
     image: "/portal.png",
+    url: "https://job-portal-by-ammar.vercel.app/",
   },
 ];
 export function PortfolioSection() {
@@ -88,10 +93,10 @@ export function PortfolioSection() {
                     alt={project.title}
                     className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/22 via-background/10 to-transparent" />
 
                   {/* Hover Overlay with action buttons */}
-                  <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0.5 group-hover:opacity-100 transition-opacity duration-300">
                     {/* Zoom icon — top-right corner */}
                     <Link
                       href={"#"}
@@ -116,15 +121,6 @@ export function PortfolioSection() {
                       title="View Live Demo"
                     >
                       <ExternalLink className="h-4 w-4" />
-                    </Link>
-                    <Link
-                      href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 rounded-full bg-black/50 backdrop-blur-sm text-white hover:bg-primary hover:scale-110 transition-all duration-200"
-                      title="View on GitHub"
-                    >
-                      <Github className="h-4 w-4" />
                     </Link>
                   </div>
                 </div>
