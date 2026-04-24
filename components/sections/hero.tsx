@@ -99,9 +99,9 @@ export function HeroSection() {
             className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-10 border-t border-border"
           >
             {[
-              { value: "150+", label: "Projects Delivered" },
+              { value: "5+", label: "Projects Delivered" },
               { value: "98%", label: "Client Satisfaction" },
-              { value: "50+", label: "AI Automations" },
+              { value: "4+", label: "AI Automations" },
               { value: "24/7", label: "Support Available" },
             ].map((stat, index) => (
               <motion.div

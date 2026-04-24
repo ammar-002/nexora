@@ -11,7 +11,7 @@ const navLinks = [
   { name: "How It Works", href: "#how-it-works" },
   { name: "Portfolio", href: "#portfolio" },
   { name: "Testimonials", href: "#testimonials" },
-  { name: "Pricing", href: "#pricing" },
+  // { name: "Pricing", href: "#pricing" },
   { name: "Contact", href: "#contact" },
 ]
 
@@ -97,9 +97,9 @@ export function Navbar() {
                   </motion.div>
                 </AnimatePresence>
               </Button>
-              <Button variant="ghost" className="text-sm">
+              {/* <Button variant="ghost" className="text-sm">
                 Log In
-              </Button>
+              </Button> */}
               <Button className="text-sm">
                 Get Started
               </Button>
