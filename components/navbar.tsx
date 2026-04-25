@@ -43,20 +43,13 @@ export function Navbar() {
         <nav className="container mx-auto px-4 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             {/* Logo */}
-            <motion.a
-              href="#"
-              className="flex items-center gap-2"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <div className="relative h-8 w-8">
-                <div className="absolute inset-0 rounded-lg bg-primary" />
-                <div className="absolute inset-1 rounded-md bg-background flex items-center justify-center">
-                  <span className="text-sm font-bold text-primary">N</span>
-                </div>
-              </div>
-              <span className="text-xl font-bold">Nexore</span>
-            </motion.a>
+             <motion.img
+             key={theme}
+              src="/logo.png"
+              alt="Logo"
+              // light up the logo if theme is light 
+              className= {theme === "light" ? "h-32 w-auto mt-2 bg-transparent brightness-55" : "h-32 w-auto mt-2"} >
+             </motion.img>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-8">

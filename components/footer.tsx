@@ -1,46 +1,43 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Github, Twitter, Linkedin, Instagram } from "lucide-react"
-
+import { motion } from "framer-motion";
+import { Github, Twitter, Linkedin, Instagram, Facebook } from "lucide-react";
+import { useTheme } from "./theme-provider";
 const socialLinks = [
   { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Github, href: "#", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/company/nexoredev/", label: "LinkedIn" },
   { icon: Instagram, href: "#", label: "Instagram" },
-]
+  {icon: Facebook, href: "#", label: "Facebook" },
+];
 
 const navLinks = [
   { label: "Services", href: "#services" },
   { label: "How It Works", href: "#how-it-works" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
-]
+];
 
 export function Footer() {
+  const { theme, toggleTheme } = useTheme();
   return (
     <footer className="bg-card/30 border-t border-border/50">
       <div className="container mx-auto px-4 lg:px-8 py-10">
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
-
           {/* Left — Logo + Description */}
           <div className="flex flex-col gap-4">
-            <motion.a
-              href="#"
-              className="flex items-center gap-2 w-fit"
-              whileHover={{ scale: 1.02 }}
-            >
-              <div className="relative h-8 w-8">
-                <div className="absolute inset-0 rounded-lg bg-primary" />
-                <div className="absolute inset-1 rounded-md bg-background flex items-center justify-center">
-                  <span className="text-sm font-bold text-primary">N</span>
-                </div>
-              </div>
-              <span className="text-xl font-bold">Nexore</span>
-            </motion.a>
+            <motion.img
+              key={theme}
+              src="/logo.png"
+              alt="Logo"
+              // light up the logo if theme is light
+              className={
+  theme === "light"
+    ? "h-25 w-35 bg-transparent brightness-55"
+    : "h-25 w-35"
+}
+            ></motion.img>
 
-            <p className="text-muted-foreground text-sm max-w-xs">
+            <p className="text-muted-foreground text-sm max-w-xs -mt-7">
               Empowering businesses with AI automation and modern web solutions.
             </p>
           </div>
@@ -77,7 +74,6 @@ export function Footer() {
               ))}
             </div>
           </div>
-
         </div>
 
         {/* Bottom */}
@@ -85,9 +81,8 @@ export function Footer() {
           <p className="text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} Nexore. All rights reserved.
           </p>
-           
         </div>
       </div>
     </footer>
-  )
+  );
 }

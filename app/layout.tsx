@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     title: 'Nexore | AI Automation & Web Development Agency',
     description: 'Transform your business with intelligent AI automation and modern web solutions.',
     type: 'website',
+    
   },
   icons: {
     icon: [
@@ -30,15 +31,15 @@ export const metadata: Metadata = {
         media: '(prefers-color-scheme: light)',
       },
       {
-        url: '/icon-dark-32x32.png',
+        url: '/icon.png',
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/icon.svg',
+        url: '/icon.png',
         type: 'image/svg+xml',
       },
     ],
-    apple: '/apple-icon.png',
+    apple: '/icon.png',
   },
 }
 
