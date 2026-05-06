@@ -21,14 +21,14 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Call Us",
-    value: "+92 328 2209704",
-    href: "tel:+923273614062",
+    value: "+92 316 1397756",
+    href: "tel:+923161397756",
   },
   {
     icon: MessageCircle,
     label: "WhatsApp",
     value: "Chat with us",
-    href: "https://wa.me/923273614062",
+    href: "https://wa.me/923161397756",
   },
   {
     icon: Mail,
