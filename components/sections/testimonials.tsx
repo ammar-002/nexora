@@ -1,51 +1,59 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
-import { useState, useRef } from "react"
+import { motion } from "framer-motion";
+import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { useState, useRef } from "react";
+import Image from "next/image";
 
 const testimonials = [
   {
     name: "Sarah Chen",
     role: "CEO, TechFlow",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
-    content: "Nexore transformed our customer support with their AI chatbot. Response times dropped by 80% and customer satisfaction is at an all-time high.",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
+    content:
+      "Nexore transformed our customer support with their AI chatbot. Response times dropped by 80% and customer satisfaction is at an all-time high.",
     rating: 5,
   },
   {
     name: "Michael Roberts",
     role: "Founder, StartupX",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
-    content: "The web application they built exceeded all expectations. Clean code, beautiful design, and incredible attention to detail. Highly recommended!",
+    image:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+    content:
+      "The web application they built exceeded all expectations. Clean code, beautiful design, and incredible attention to detail. Highly recommended!",
     rating: 5,
   },
   {
     name: "Emily Watson",
     role: "COO, DataDriven",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&auto=format&fit=crop&q=80",
-    content: "Their workflow automation solutions saved us 40+ hours per week. The ROI was visible within the first month. A game-changer for our operations.",
+    image:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&auto=format&fit=crop&q=80",
+    content:
+      "Their workflow automation solutions saved us 40+ hours per week. The ROI was visible within the first month. A game-changer for our operations.",
     rating: 5,
   },
-]
+];
 
 export function TestimonialsSection() {
-  const [current, setCurrent] = useState(0)
-  const touchStartX = useRef<number | null>(null)
+  const [current, setCurrent] = useState(0);
+  const touchStartX = useRef<number | null>(null);
 
-  const prev = () => setCurrent((c) => (c - 1 + testimonials.length) % testimonials.length)
-  const next = () => setCurrent((c) => (c + 1) % testimonials.length)
+  const prev = () =>
+    setCurrent((c) => (c - 1 + testimonials.length) % testimonials.length);
+  const next = () => setCurrent((c) => (c + 1) % testimonials.length);
 
   const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX
-  }
+    touchStartX.current = e.touches[0].clientX;
+  };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX.current === null) return
-    const delta = touchStartX.current - e.changedTouches[0].clientX
-    if (Math.abs(delta) > 40) delta > 0 ? next() : prev()
-    touchStartX.current = null
-  }
+    if (touchStartX.current === null) return;
+    const delta = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(delta) > 40) delta > 0 ? next() : prev();
+    touchStartX.current = null;
+  };
 
   return (
     <section id="testimonials" className="py-24 lg:py-32 relative bg-muted/30">
@@ -58,13 +66,15 @@ export function TestimonialsSection() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="text-sm font-medium text-primary mb-4 block">Testimonials</span>
+          <span className="text-sm font-medium text-primary mb-4 block">
+            Testimonials
+          </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance">
-            Trusted by{" "}
-            <span className="gradient-text">Industry Leaders</span>
+            Trusted by <span className="gradient-text">Industry Leaders</span>
           </h2>
           <p className="text-muted-foreground text-lg text-pretty">
-            Hear from businesses that have transformed their operations with our solutions.
+            Hear from businesses that have transformed their operations with our
+            solutions.
           </p>
         </motion.div>
 
@@ -86,22 +96,33 @@ export function TestimonialsSection() {
                 <CardContent className="p-6">
                   <Quote className="h-8 w-8 text-primary/30 mb-4" />
                   <div className="flex gap-1 mb-4">
-                    {Array.from({ length: testimonials[current].rating }).map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-primary text-primary" />
-                    ))}
+                    {Array.from({ length: testimonials[current].rating }).map(
+                      (_, i) => (
+                        <Star
+                          key={i}
+                          className="h-4 w-4 fill-primary text-primary"
+                        />
+                      ),
+                    )}
                   </div>
                   <p className="text-foreground mb-6 text-pretty leading-relaxed">
                     &ldquo;{testimonials[current].content}&rdquo;
                   </p>
                   <div className="flex items-center gap-4">
-                    <img
+                    <Image
                       src={testimonials[current].image}
                       alt={testimonials[current].name}
-                      className="w-12 h-12 rounded-full object-cover border-2 border-primary/20"
+                      width={48}
+                      height={48}
+                      className="rounded-full object-cover border-2 border-primary/20"
                     />
                     <div>
-                      <div className="font-semibold">{testimonials[current].name}</div>
-                      <div className="text-sm text-muted-foreground">{testimonials[current].role}</div>
+                      <div className="font-semibold">
+                        {testimonials[current].name}
+                      </div>
+                      <div className="text-sm text-muted-foreground">
+                        {testimonials[current].role}
+                      </div>
                     </div>
                   </div>
                 </CardContent>
@@ -160,21 +181,28 @@ export function TestimonialsSection() {
                   <Quote className="h-8 w-8 text-primary/30 mb-4" />
                   <div className="flex gap-1 mb-4">
                     {Array.from({ length: testimonial.rating }).map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                      <Star
+                        key={i}
+                        className="h-4 w-4 fill-primary text-primary"
+                      />
                     ))}
                   </div>
                   <p className="text-foreground mb-6 text-pretty leading-relaxed">
                     &ldquo;{testimonial.content}&rdquo;
                   </p>
                   <div className="flex items-center gap-4">
-                    <img
+                    <Image
                       src={testimonial.image}
                       alt={testimonial.name}
-                      className="w-12 h-12 rounded-full object-cover border-2 border-primary/20"
+                      width={48}
+                      height={48}
+                      className="rounded-full object-cover border-2 border-primary/20"
                     />
                     <div>
                       <div className="font-semibold">{testimonial.name}</div>
-                      <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                      <div className="text-sm text-muted-foreground">
+                        {testimonial.role}
+                      </div>
                     </div>
                   </div>
                 </CardContent>
@@ -184,5 +212,5 @@ export function TestimonialsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

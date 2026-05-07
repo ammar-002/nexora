@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useTheme } from "@/components/theme-provider";
+import { useTheme } from "next-themes";
 
 const navLinks = [
   { name: "Services", href: "#services" },
@@ -18,7 +18,7 @@ const navLinks = [
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -77,7 +77,7 @@ export function Navbar() {
               <Button
                 variant="ghost"
                 size="icon"
-                onClick={toggleTheme}
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 className="rounded-full"
               >
                 <AnimatePresence mode="wait">
@@ -107,7 +107,7 @@ export function Navbar() {
               <Button
                 variant="ghost"
                 size="icon"
-                onClick={toggleTheme}
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 className="rounded-full"
               >
                 {theme === "dark" ? (

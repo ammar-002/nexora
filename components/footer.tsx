@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Github, Twitter, Linkedin, Instagram, Facebook } from "lucide-react";
-import { useTheme } from "@/components/theme-provider";
+import { useTheme } from "next-themes";
 import WhatsappBusinessIcon from "./ui/whatsapp-icon";
 
 const footerLinks = {
@@ -56,7 +56,7 @@ const socialLinks = [
 ];
 
 export function Footer() {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   return (
     <footer className="bg-card/30 border-t border-border/50">
